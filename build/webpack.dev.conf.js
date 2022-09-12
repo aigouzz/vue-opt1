@@ -70,12 +70,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     ])
   ]
 })
-for (let i in devWebpackConfig.module.rules) {
-  let rule = devWebpackConfig.module.rules[i]
-  if (String(rule.test).indexOf('css') > 0) {
-    console.log(rule.use);
-  }
-}
+
 module.exports = new Promise((resolve, reject) => {
   portfinder.basePort = process.env.PORT || config.dev.port
   portfinder.getPort((err, port) => {

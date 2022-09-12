@@ -14,6 +14,8 @@
                 isChecked: false,
             };
         },
+        mounted() {
+        },
         methods: {
             blur() {
                 let reg = /^\S+$/g;

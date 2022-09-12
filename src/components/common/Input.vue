@@ -38,6 +38,9 @@ export default{
     deactivated() {
         console.log('input deactivate');
     },
+    mounted() {
+        // console.log(this.father)
+    },
 }
 </script>
 <style scoped>

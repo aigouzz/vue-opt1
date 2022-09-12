@@ -1,41 +1,30 @@
 <template>
     <div class="opt-input">
-        <input :value="inputVal" @input="change" />
+        <keep-alive>
+            <component :is="componentName"></component>
+        </keep-alive>
+        <button @click="changeComp">切换component</button>
     </div>
 </template>
 <script>
-/* eslint-disable */
-function debounce(fn, wait=300) {
-    let timer;
-    return function() {
-        let context = this;
-        if(timer) {
-            clearTimeout(timer);
-        }
-        timer = setTimeout(() => {
-            fn.apply(context, arguments);
-        }, wait);
-    }
-}
-export default{
-    data() {
-        return {
-            inputVal: '123'
-        };
-    },
-    methods: {
-        change: debounce(function(e) {
-                this.inputVal = e.target.value;
-                this.clearInput();
-            }, 1000),
-        clearInput() {
-            this.inputVal = '';
+/*eslint-disable */
+import Input from './common/Input.vue';
+import Textarea from './common/Textarea.vue';
+    export default{
+        data() {
+            return {
+                componentName: Input
+            };
         },
-    },
-}
+        methods: {
+            changeComp() {
+                this.componentName = this.componentName === Input ? Textarea : Input;
+            }
+        },
+    };
 </script>
 <style scoped>
-input{
-    text-decoration: none;
-}
+    .opt-input button{
+        border:1px solid #eee;
+    }
 </style>

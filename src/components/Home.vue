@@ -22,6 +22,12 @@
                 },
             })])]);
         },
+        activated() {
+            console.log('home activate')
+        },
+        deactivated() {
+            console.log('home deactivate')
+        },
     };
 </script>
 <style></style>

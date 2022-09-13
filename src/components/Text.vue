@@ -11,6 +11,11 @@
             <component :is="componentName"></component>
         </keep-alive>
         <button @click="changeComp">切换component</button>
+        <div class="opt-text-link">
+            <router-link to="/">首页</router-link>
+            <router-link to="/home">home</router-link>
+            <router-link to="/about">about</router-link>
+        </div>
     </div>
 </template>
 <script>
@@ -52,12 +57,14 @@ import Textarea from './common/Textarea.vue';
             },
         },
         mounted() {
-            console.log(this.textArr[0]);
+            
         },  
     };
 </script>
 <style scoped lang="less">
     .opt-text{
+        width: 1000px;
+        margin: 0 auto;
         button{
             border:1px solid #eee;
         }

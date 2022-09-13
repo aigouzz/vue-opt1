@@ -1,11 +1,13 @@
 <script>
 import { mapState } from 'vuex'
+import HomeCheck from './home/HomeCheck'
 /*eslint-disable */
     export default{
         data() {
             return {};
         },
         render(h) {
+            console.log(h(HomeCheck))
             return h('div', {
                 class: 'opt-home'
             }, [h('div', {
@@ -31,7 +33,7 @@ import { mapState } from 'vuex'
                 attrs: {
                     to: `/login?from=${this.$route.path}`
                 }
-            }, '去登录')])])]);
+            }, '去登录')]), h(HomeCheck)])]);
         },
         activated() {
             console.log('home activate')

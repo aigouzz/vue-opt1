@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import AboutInner from '@/components/about/AboutInner'
 import AboutHot from '@/components/about/AboutHot'
 import AboutBook from '@/components/about/AboutBook'
-import Login from '@/components/Login'
+const Login = () => import('@/components/Login')
 const Text = () => import('@/components/Text')
 const Home = () => import('@/components/Home')
 const About = () => import('@/components/About')

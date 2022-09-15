@@ -1,5 +1,5 @@
 <template>
-    <div class="about-hot-container">
+    <div class="about-book-container">
         这是about的book page
         id:{{id}}
     </div>
@@ -20,7 +20,7 @@
 <style scoped lang="less">
     @innerColor: #0f0;
     @border: 1px solid @innerColor;
-    .about-hot-container{
+    .about-book-container{
         border: @border;
         font-size: 14px;
     }

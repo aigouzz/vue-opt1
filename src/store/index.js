@@ -1,7 +1,15 @@
 import Vuex from 'vuex'
 import Vue from 'vue'
+let modules = {}
+let files = require.context('./modules', false, /\.js$/)
 /*eslint-disable */
 Vue.use(Vuex);
+
+files.keys().forEach(async element => {
+    let name = element.replace('./', '').replace('.js', '');
+    modules[name] = require(`./modules/${name}.js`).default;
+});
+
 export default new Vuex.Store({
     state: {
         isLogin: localStorage.getItem('isLogin'),
@@ -25,4 +33,5 @@ export default new Vuex.Store({
             localStorage.setItem('loginName', payload)
         },
     },
+    modules,
 })

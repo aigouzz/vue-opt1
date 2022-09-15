@@ -1,12 +1,24 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import AboutInner from '@/components/about/AboutInner'
-import AboutHot from '@/components/about/AboutHot'
-import AboutBook from '@/components/about/AboutBook'
-const Login = () => import('@/components/Login')
-const Text = () => import('@/components/Text')
-const Home = () => import('@/components/Home')
-const About = () => import('@/components/About')
+import Text from '@/components/Text'
+const AboutInner = () => import(
+  /* webpackChunkName: 'about' */
+  '@/components/about/AboutInner')
+const AboutHot = () => import(
+  /* webpackChunkName: 'about' */
+  '@/components/about/AboutHot')
+const AboutBook = () => import(
+  /* webpackChunkName: 'about' */
+  '@/components/about/AboutBook')
+const Login = () => import(
+  /* webpackChunkName: 'login' */
+  '@/components/Login')
+const Home = () => import(
+  /* webpackChunkName: 'home' */
+  '@/components/Home')
+const About = () => import(
+  /* webpackChunkName: 'about' */
+  '@/components/About')
 
 Vue.use(Router)
 

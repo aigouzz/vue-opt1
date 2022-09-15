@@ -49,7 +49,7 @@ import HomeCheck from './home/HomeCheck'
             checkOut() {
                 this.$store.commit('setLogin', '');
                 this.$store.commit('setLoginName', null);
-                location.href.reload();
+                location.reload();
             }
         }
     };

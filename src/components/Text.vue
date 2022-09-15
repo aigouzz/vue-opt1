@@ -57,7 +57,10 @@ import Textarea from './common/Textarea.vue';
             },
         },
         mounted() {
-            
+            let homeModule = this.$store.state.home;
+            console.log(homeModule.address)
+            this.$store.commit('home/setAddress', 'beijing 12-1-1002')
+            console.log(homeModule.address)
         },  
     };
 </script>
